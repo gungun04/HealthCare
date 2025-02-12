@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator – Track Your Health Instantly</title>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --success-color: #2ECC71;
+            --warning-color: #F39C12;
+            --danger-color: #E74C3C;
+            --text-color: #2C3E50;
+            --background-color: #F5F7FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            transform: translateY(-20px);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 1rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E0E5EC;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        select {
+            width: 120px;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2980B9 100%);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .bmi-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .category {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .underweight {
+            background: rgba(74, 144, 226, 0.1);
+            color: var(--primary-color);
+        }
+
+        .normal {
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--success-color);
+        }
+
+        .overweight {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--warning-color);
+        }
+
+        .obese {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--danger-color);
+        }
+
+        .result-box {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .inches-input {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .learn-more-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .quote {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .calculator-card {
+                padding: 1.5rem;
+            }
+
+            .learn-more-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculate Your BMI – Know Your Health Status!</h1>
+        <p class="subheading">Your BMI helps you understand your body weight in relation to your height. Let's find yours!</p>
+    </header>
+
+    <div class="container">
+        <div class="calculator-card">
+            <form id="bmi-form" onsubmit="calculateBMI(event)">
+                <div class="input-group">
+                    <label for="height">Height</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="height" placeholder="Enter height" required step="0.01">
+                        <select id="height-unit">
+                            <option value="cm">cm</option>
+                            <option value="ft">ft + in</option>
+                        </select>
+                    </div>
+                    <div id="inches-input" class="inches-input">
+                        <input type="number" id="inches" placeholder="Inches" step="0.01">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="weight">Weight</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" placeholder="Enter weight" required step="0.01">
+                        <select id="weight-unit">
+                            <option value="kg">kg</option>
+                            <option value="lbs">lbs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="calculate-btn">Calculate BMI</button>
+            </form>
+
+            <div class="bmi-categories">
+                <div class="category underweight">
+                    🔵 Underweight<br>&lt; 18.5
+                </div>
+                <div class="category normal">
+                    🟢 Normal<br>18.5 – 24.9
+                </div>
+                <div class="category overweight">
+                    🟠 Overweight<br>25 – 29.9
+                </div>
+                <div class="category obese">
+                    🔴 Obese<br>30+
+                </div>
+            </div>
+
+            <div id="result-box" class="result-box">
+                <h3>Your BMI Result</h3>
+                <div id="bmi-value" class="result-value"></div>
+                <p id="bmi-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="learn-more-btn">Try AI Nutrition Advisor →</a>
+
+    <footer>
+        <p class="quote">"A healthy outside starts from the inside." – Robert Urich</p>
+    </footer>
+
+    <script>
+        // Show/hide inches input based on height unit selection
+        document.getElementById('height-unit').addEventListener('change', function() {
+            document.getElementById('inches-input').style.display = 
+                this.value === 'ft' ? 'block' : 'none';
+        });
+
+        function calculateBMI(event) {
+            event.preventDefault();
+            
+            let height = parseFloat(document.getElementById("height").value);
+            let weight = parseFloat(document.getElementById("weight").value);
+            const heightUnit = document.getElementById("height-unit").value;
+            const weightUnit = document.getElementById("weight-unit").value;
+
+            // Convert height to centimeters
+            if (heightUnit === "ft") {
+                const inches = parseFloat(document.getElementById("inches").value) || 0;
+                height = (height * 30.48) + (inches * 2.54); // Convert feet and inches to cm
+            }
+
+            // Convert weight to kilograms
+            if (weightUnit === "lbs") {
+                weight *= 0.453592;
+            }
+
+            if (height > 0 && weight > 0) {
+                const heightInMeters = height / 100;
+                const bmi = weight / (heightInMeters * heightInMeters);
+                const bmiRounded = bmi.toFixed(1);
+
+                // Update result box
+                const resultBox = document.getElementById("result-box");
+                resultBox.style.display = "block";
+                
+                // Remove previous color classes
+                resultBox.classList.remove("underweight", "normal", "overweight", "obese");
+                
+                // Set BMI value
+                document.getElementById("bmi-value").innerText = bmiRounded;
+
+                // Determine BMI category and set appropriate styling
+                let message = "";
+                let categoryClass = "";
+                
+                if (bmi < 18.5) {
+                    message = "You are underweight. Consider consulting a healthcare provider about healthy ways to gain weight.";
+                    categoryClass = "underweight";
+                    resultBox.style.background = "rgba(74, 144, 226, 0.1)";
+                } else if (bmi < 24.9) {
+                    message = "Your weight is in the normal range. Keep maintaining a healthy lifestyle!";
+                    categoryClass = "normal";
+                    resultBox.style.background = "rgba(46, 204, 113, 0.1)";
+                } else if (bmi < 29.9) {
+                    message = "You are overweight. Consider a balanced diet and regular exercise routine.";
+                    categoryClass = "overweight";
+                    resultBox.style.background = "rgba(243, 156, 18, 0.1)";
+                } else {
+                    message = "You are in the obese range. We recommend consulting a healthcare provider for personalized advice.";
+                    categoryClass = "obese";
+                    resultBox.style.background = "rgba(231, 76, 60, 0.1)";
+                }
+
+                resultBox.classList.add(categoryClass);
+                document.getElementById("bmi-message").innerText = message;
+            }
+        }
+    </script>
+</body>
+</html>
