@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-blue-600">HealthCare</div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Features</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Find a Doctor</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Emergency</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Blog</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Login/Register</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-4">Your Health, Our Priority!</h1>
+            <p class="text-xl mb-8">Track, Monitor, and Improve Your Health with AI-driven Insights.</p>
+            <div class="space-x-4">
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Get Started</button>
+                <button class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100">Explore Features</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature Cards -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">BMI Tracker</h3>
+                    <p class="text-gray-600 mb-4">Track your Body Mass Index and get personalized recommendations.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Calculate BMI
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">🫁</div>
+                    <h3 class="text-xl font-bold mb-2">Deep Breathing Guide</h3>
+                    <p class="text-gray-600 mb-4">Follow guided breathing exercises for stress relief and better health.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Start Exercise
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">🩸</div>
+                    <h3 class="text-xl font-bold mb-2">Blood & Organ Donation</h3>
+                    <p class="text-gray-600 mb-4">Connect with donors and find donation centers near you.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Find Donors
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">🥗</div>
+                    <h3 class="text-xl font-bold mb-2">Diet Plan</h3>
+                    <p class="text-gray-600 mb-4">Get personalized meal plans and nutritional guidance.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Get Plan
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">🚑</div>
+                    <h3 class="text-xl font-bold mb-2">Emergency Assistant</h3>
+                    <p class="text-gray-600 mb-4">Quick access to emergency services and first-aid guides.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Emergency Help
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">💊</div>
+                    <h3 class="text-xl font-bold mb-2">Medicine Reminder</h3>
+                    <p class="text-gray-600 mb-4">Never miss your medications with smart reminders.</p>
+                    <a href="med.html" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Set Reminder
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold mb-2">Calorie Tracker</h3>
+                    <p class="text-gray-600 mb-4">Stay on track, every bite counts.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Track Calories
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">📅</div>
+                    <h3 class="text-xl font-bold mb-2">Doctor's Appointment</h3>
+                    <p class="text-gray-600 mb-4">Your health, your schedule.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Book Appointment
+                    </a>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">BP & Sugar Tracker</h3>
+                    <p class="text-gray-600 mb-4">Monitor your health, stay in control.</p>
+                    <a href="" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-center block">
+                        Monitor Health
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <h3 class="text-4xl font-bold text-blue-600 mb-2">28.5</h3>
+                    <p class="text-gray-600">Your Latest BMI</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-4xl font-bold text-red-600 mb-2">150+</h3>
+                    <p class="text-gray-600">Blood Donations Needed</p>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-4xl font-bold text-green-600 mb-2">5</h3>
+                    <p class="text-gray-600">Doctors Online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Educational Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="/api/placeholder/400/225" alt="Video thumbnail" class="rounded-lg shadow-lg">
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="/api/placeholder/400/225" alt="Video thumbnail" class="rounded-lg shadow-lg">
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="/api/placeholder/400/225" alt="Video thumbnail" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Watch More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of the sections remain the same -->
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <p class="text-gray-600 mb-4">"This app helped me track my sugar levels effectively!"</p>
+                    <p class="font-bold">- John Doe</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <p class="text-gray-600 mb-4">"The breathing exercises have really helped with my anxiety."</p>
+                    <p class="font-bold">- Jane Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">About</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Privacy</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-400">Facebook</a>
+                        <a href="#" class="hover:text-blue-400">Twitter</a>
+                        <a href="#" class="hover:text-blue-400">Instagram</a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <div class="flex">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-lg w-full text-gray-800">
+                        <button class="bg-blue-600 px-6 py-2 rounded-r-lg hover:bg-blue-700">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
