@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Breathing Guide – Relax & Recharge</title>
+    <style>
+        :root {
+            --primary-color: #64B5F6;
+            --secondary-color: #B39DDB;
+            --success-color: #81C784;
+            --text-color: #2C3E50;
+            --background-color: #F5F7FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #E0F7FA 0%, #E8EAF6 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background 2s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #82B1FF 0%, #B388FF 100%);
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .subheading {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .breathing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .breathing-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .breathing-option {
+            padding: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .breathing-option:hover,
+        .breathing-option.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .breathing-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .breathing-circle.inhale {
+            animation: expand 4s ease-in-out infinite;
+        }
+
+        .breathing-circle.exhale {
+            animation: contract 4s ease-in-out infinite;
+        }
+
+        .breathing-status {
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            font-weight: 500;
+        }
+
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button.stop {
+            background: #FF5252;
+        }
+
+        .sound-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #82B1FF 0%, #B388FF 100%);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .quote {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes expand {
+            from { transform: scale(1); }
+            to { transform: scale(1.5); }
+        }
+
+        @keyframes contract {
+            from { transform: scale(1.5); }
+            to { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .breathing-circle {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Deep Breathing Guide – Relax, Focus, and Rejuvenate</h1>
+        <p class="subheading">Controlled breathing can reduce stress, improve focus, and boost overall well-being. Let's breathe together!</p>
+    </header>
+
+    <div class="container">
+        <div class="breathing-card">
+            <div class="breathing-controls">
+                <div class="breathing-option" data-type="box">
+                    <h3>Box Breathing</h3>
+                    <p>4-4-4-4</p>
+                </div>
+                <div class="breathing-option" data-type="478">
+                    <h3>4-7-8 Breathing</h3>
+                    <p>Relaxing breath</p>
+                </div>
+                <div class="breathing-option" data-type="equal">
+                    <h3>Equal Breathing</h3>
+                    <p>5-0-5</p>
+                </div>
+                <div class="breathing-option" data-type="custom">
+                    <h3>Custom Pattern</h3>
+                    <p>Create your own</p>
+                </div>
+            </div>
+
+            <div class="custom-pattern" style="display: none;">
+                <h3>Custom Breathing Pattern</h3>
+                <div class="custom-inputs">
+                    <div class="input-group">
+                        <label for="inhale">Inhale (seconds)</label>
+                        <input type="number" id="inhale" min="1" max="10" value="4">
+                    </div>
+                    <div class="input-group">
+                        <label for="hold1">Hold 1 (seconds)</label>
+                        <input type="number" id="hold1" min="0" max="10" value="4">
+                    </div>
+                    <div class="input-group">
+                        <label for="exhale">Exhale (seconds)</label>
+                        <input type="number" id="exhale" min="1" max="10" value="4">
+                    </div>
+                    <div class="input-group">
+                        <label for="hold2">Hold 2 (seconds)</label>
+                        <input type="number" id="hold2" min="0" max="10" value="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="breathing-circle">
+                <span class="breath-text">Ready</span>
+            </div>
+
+            <div class="breathing-status">Select a breathing pattern to begin</div>
+            <div class="timer">00:00</div>
+
+            <div class="controls">
+                <button class="start">Start Exercise</button>
+                <button class="stop" style="display: none;">Stop</button>
+            </div>
+
+            <div class="sound-toggle">
+                <label>
+                    <input type="checkbox" id="sound-toggle"> Enable sound guidance
+                </label>
+            </div>
+
+            <div class="volume-control">
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p class="quote">"Breath is the bridge between body and mind." – Thích Nhất Hạnh</p>
+    </footer>
+
+    <script>
+        class BreathingExercise {
+            constructor() {
+                this.patterns = {
+                    box: { inhale: 4, hold1: 4, exhale: 4, hold2: 4 },
+                    478: { inhale: 4, hold1: 7, exhale: 8, hold2: 0 },
+                    equal: { inhale: 5, hold1: 0, exhale: 5, hold2: 0 }
+                };
+                this.currentPattern = null;
+                this.isRunning = false;
+                this.timer = null;
+                this.startTime = null;
+                this.soundEnabled = false;
+                this.volume = 0.5;
+                this.audioContext = null;
+                this.oscillator = null;
+                this.gainNode = null;
+
+
+                this.initialize();
+                this.initializeAudio();
+            }
+
+            initialize() {
+                // DOM elements
+                this.circle = document.querySelector('.breathing-circle');
+                this.status = document.querySelector('.breathing-status');
+                this.timerDisplay = document.querySelector('.timer');
+                this.startButton = document.querySelector('.start');
+                this.stopButton = document.querySelector('.stop');
+                this.soundToggle = document.getElementById('sound-toggle');
+
+                // Event listeners
+                document.querySelectorAll('.breathing-option').forEach(option => {
+                    option.addEventListener('click', () => this.selectPattern(option.dataset.type));
+                });
+
+                this.startButton.addEventListener('click', () => this.start());
+                this.stopButton.addEventListener('click', () => this.stop());
+                this.soundToggle.addEventListener('change', (e) => this.soundEnabled = e.target.checked);
+
+                this.customPattern = document.querySelector('.custom-pattern');
+                this.volumeControl = document.getElementById('volume');
+
+                this.volumeControl.addEventListener('input', (e) => {
+                    this.volume = parseFloat(e.target.value);
+                    if (this.gainNode) {
+                        this.gainNode.gain.value = this.volume;
+                    }
+                });
+            }
+
+            initializeAudio() {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                this.gainNode = this.audioContext.createGain();
+                this.gainNode.connect(this.audioContext.destination);
+                this.gainNode.gain.value = this.volume;
+            }
+
+            selectPattern(type) {
+                document.querySelectorAll('.breathing-option').forEach(option => {
+                    option.classList.remove('active');
+                    if (option.dataset.type === type) {
+                        option.classList.add('active');
+                    }
+                });
+                if (type === 'custom') {
+                    this.customPattern.style.display = 'block';
+                    this.currentPattern = this.getCustomPattern();
+                } else {
+                    this.customPattern.style.display = 'none';
+                    this.currentPattern = this.patterns[type];
+                }
+
+                this.status.textContent = `Selected: ${type.charAt(0).toUpperCase() + type.slice(1)} Breathing`;
+            }
+
+            
+
+            async start() {
+                if (!this.currentPattern) {
+                    alert('Please select a breathing pattern first');
+                    return;
+                }
+
+                this.isRunning = true;
+                this.startButton.style.display = 'none';
+                this.stopButton.style.display = 'inline-block';
+                this.startTime = Date.now();
+
+                while (this.isRunning) {
+                    // Inhale
+                    await this.breathingPhase('inhale', this.currentPattern.inhale);
+                    if (!this.isRunning) break;
+
+                    // Hold 1
+                    if (this.currentPattern.hold1 > 0) {
+                        await this.breathingPhase('hold', this.currentPattern.hold1);
+                        if (!this.isRunning) break;
+                    }
+
+                    // Exhale
+                    await this.breathingPhase('exhale', this.currentPattern.exhale);
+                    if (!this.isRunning) break;
+
+                    // Hold 2
+                    if (this.currentPattern.hold2 > 0) {
+                        await this.breathingPhase('hold', this.currentPattern.hold2);
+                        if (!this.isRunning) break;
+                    }
+                }
+            }
+
+            async breathingPhase(phase, duration) {
+                this.status.textContent = phase.charAt(0).toUpperCase() + phase.slice(1);
+                this.circle.className = 'breathing-circle';
+                
+                if (phase === 'inhale') {
+                    this.circle.classList.add('inhale');
+                    document.body.style.background = 'linear-gradient(135deg, #E0F7FA 0%, #E8EAF6 100%)';
+                } else if (phase === 'exhale') {
+                    this.circle.classList.add('exhale');
+                    document.body.style.background = 'linear-gradient(135deg, #E8EAF6 0%, #E0F7FA 100%)';
+                }
+
+                if (this.soundEnabled) {
+                    this.playSound(phase);
+                }
+
+                if (this.soundEnabled) {
+                    this.playSound(phase);
+                }
+
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        if (this.oscillator) {
+                            this.gainNode.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.1);
+                            setTimeout(() => {
+                                this.oscillator.stop();
+                                this.oscillator.disconnect();
+                            }, 100);
+                        }
+                        resolve();
+                    }, duration * 1000);
+                });
+            }
+
+            playSound(phase) {
+                // In a real implementation, you would play appropriate sounds here
+                console.log(`Playing ${phase} sound`);
+            }
+
+            stop() {
+                this.isRunning = false;
+                this.circle.className = 'breathing-circle';
+                this.status.textContent = 'Exercise stopped';
+                this.startButton.style.display = 'inline-block';
+                this.stopButton.style.display = 'none';
+                document.body.style.background = 'linear-gradient(135deg, #E0F7FA 0%, #E8EAF6 100%)';
+                clearInterval(this.timer);
+            }
+
+            updateTimer() {
+                const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                const seconds = (elapsed % 60).toString().padStart(2, '0');
+                this.timerDisplay.textContent = `${minutes}:${seconds}`;
+            }
+        }
+
+        // Initialize the breathing exercise
+        const breathingExercise = new BreathingExercise();
+
+        // Update timer every second when exercise is running
+        setInterval(() => {
+            if (breathingExercise.isRunning) {
+                breathingExercise.updateTimer();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
