@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आहार योजना - Personalized Indian Diet Planner</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FFE5E5 0%, #E8F5E9 100%);
+        }
+        .meal-card {
+            transition: transform 0.3s ease;
+        }
+        .meal-card:hover {
+            transform: translateY(-5px);
+        }
+        .form-section {
+            background: linear-gradient(45deg, #FFF8E1 0%, #F3E5F5 100%);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-green-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">आहार योजना</h1>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-green-200">About</a>
+                <a href="#contact" class="hover:text-green-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="gradient-bg py-20">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                स्वस्थ भारत, स्वस्थ आहार
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Personalized Indian Diet Plans Based on Your Health Conditions & Lifestyle
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="form-section rounded-lg p-8 shadow-lg max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6">Create Your Personalized Plan</h2>
+            
+            <form id="dietForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Basic Information -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Age</label>
+                        <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                    </div>
+
+                    <!-- Health Conditions -->
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700">Health Conditions</label>
+                        <div class="mt-2 grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">Diabetes (Type 2)</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">High BP</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">Low BP</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">PCOS</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">Thyroid</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-green-600">
+                                <span class="ml-2">Heart Disease</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Dietary Preferences -->
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700">Dietary Preference</label>
+                        <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            <option>Pure Vegetarian (No Onion/Garlic)</option>
+                            <option>Vegetarian</option>
+                            <option>Non-Vegetarian</option>
+                            <option>Jain</option>
+                        </select>
+                    </div>
+
+                    <!-- Current Health Metrics -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Weight (kg)</label>
+                        <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Height (cm)</label>
+                        <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                    </div>
+
+                    <!-- Activity Level -->
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700">Activity Level</label>
+                        <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500">
+                            <option>Sedentary (Office job, Little exercise)</option>
+                            <option>Lightly Active (Light exercise 1-3 days/week)</option>
+                            <option>Moderately Active (Exercise 3-5 days/week)</option>
+                            <option>Very Active (Hard exercise 6-7 days/week)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                        Generate My Diet Plan
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sample Meal Plan Preview -->
+        <section id="mealPlan" class="mt-16 hidden">
+            <h2 class="text-3xl font-bold mb-8 text-center">Your Personalized Meal Plan</h2>
+            
+            <div class="flex justify-center space-x-4 mb-8">
+                <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg">Week 1</button>
+                <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg">Week 2</button>
+                <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg">Week 3</button>
+                <button class="px-4 py-2 bg-green-100 text-green-800 rounded-lg">Week 4</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Breakfast -->
+                <div class="meal-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Breakfast (8:00 AM)</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Ragi Dosa with Sambar
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Mixed Sprouts
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Green Chutney
+                            </li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-600">Calories: 320 kcal</p>
+                            <p class="text-sm text-gray-600">Protein: 12g</p>
+                            <p class="text-sm text-gray-600">Fiber: 8g</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch -->
+                <div class="meal-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Lunch (1:00 PM)</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Multi-grain Rotis
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Dal Palak
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Vegetable Curry
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Curd
+                            </li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-600">Calories: 450 kcal</p>
+                            <p class="text-sm text-gray-600">Protein: 18g</p>
+                            <p class="text-sm text-gray-600">Fiber: 12g</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dinner -->
+                <div class="meal-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Dinner (8:00 PM)</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Quinoa Khichdi
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Mixed Vegetable Raita
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">•</span>
+                                Roasted Papad
+                            </li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t">
+                            <p class="text-sm text-gray-600">Calories: 380 kcal</p>
+                            <p class="text-sm text-gray-600">Protein: 14g</p>
+                            <p class="text-sm text-gray-600">Fiber: 9g</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Tips -->
+            <div class="mt-12 bg-green-50 rounded-lg p-6">
+                <h3 class="text-xl font-bold mb-4">Personalized Health Tips</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <span class="text-green-600 mr-2">🌿</span>
+                        Include methi seeds in your diet to help manage blood sugar levels
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-green-600 mr-2">🌿</span>
+                        Consider having amla juice on an empty stomach for better absorption of nutrients
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-green-600 mr-2">🌿</span>
+                        Practice portion control using the katori method
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('dietForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('mealPlan').classList.remove('hidden');
+            document.getElementById('mealPlan').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
