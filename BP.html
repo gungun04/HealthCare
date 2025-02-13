@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Health Tracker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .gradient-bg {
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+        .input-focus {
+            transition: all 0.3s ease;
+        }
+        .input-focus:focus {
+            transform: translateY(-2px);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #a1c4fd transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #a1c4fd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto p-6">
+        <!-- Main Card -->
+        <div class="glass-effect rounded-2xl shadow-xl p-8 max-w-5xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">Health Metrics Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                        History
+                    </button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                        Settings
+                    </button>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- BP Section -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Blood Pressure
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Systolic (mmHg)</label>
+                            <input type="number" id="systolic" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent input-focus" placeholder="120">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Diastolic (mmHg)</label>
+                            <input type="number" id="diastolic" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent input-focus" placeholder="80">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sugar Section -->
+                <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        Blood Sugar
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Fasting (mg/dL)</label>
+                            <input type="number" id="fasting" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent input-focus" placeholder="95">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-1">Post Prandial (mg/dL)</label>
+                            <input type="number" id="postPrandial" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent input-focus" placeholder="140">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="analyzeHealth()" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition shadow-lg transform hover:scale-[1.02] duration-200">
+                Analyze Health Metrics
+            </button>
+
+            <!-- Results Section -->
+            <div id="results" class="mt-8 grid md:grid-cols-2 gap-6">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card p-6">
+        <h3 class="text-xl font-semibold mb-4">Appointment Suggestions</h3>
+        <div class="space-y-4">
+            <p class="text-gray-600">Based on your recent readings, no immediate appointment is needed. Continue monitoring your health.</p>
+            <button class="w-full bg-gray-100 text-gray-500 px-4 py-2 rounded-lg cursor-not-allowed">Book Appointment</button>
+        </div>
+    </div>
+
+    <div class="bg-red-50 py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="card p-6 border-l-4 border-red-500">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-red-700">Emergency Support</h3>
+                        <p class="text-gray-600">Need immediate medical attention?</p>
+                    </div>
+                    <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition">Call Emergency</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="BP.js"></script>
+</body>
+</html>

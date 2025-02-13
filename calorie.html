@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calorie Tracker</title>
+    <link rel="stylesheet" href="calorie.css">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🍎 CalorieTracker</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+        </div>
+        <div class="profile">👤</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Smart Calorie Tracking Made Easy! 🍎🔥</h1>
+        <p>Log your meals, track your intake, and let AI predict your health trends.</p>
+        <button class="btn btn-primary" style="margin-top: 1rem;">Start Tracking</button>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Food Input Section -->
+        <section class="food-input">
+            <h2>Today's Food Log</h2>
+            <div class="container">
+                <div class="food-input-section">
+                    <div class="food-search">
+                        <input type="text" class="search-input" placeholder="Search for food items...">
+                        <div class="dropdown"></div>
+                    </div>
+                    
+                    <div class="food-list">
+                        <div class="food-item food-header">
+                            <div>Food Item</div>
+                            <div>Quantity</div>
+                            <div>Calories</div>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="total-calories">
+                        Total Calories: <span id="total-calories">0</span> kcal
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Progress Section -->
+        <section class="progress-container">
+            <h2>Daily Progress</h2>
+            <p>You've consumed <strong><span id="progress-calories">0</span> kcal</strong> out of your <strong>2000 kcal</strong> goal today!</p>
+            <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+        </section>
+
+        <!-- Predictions Section -->
+        <section class="predictions">
+            <h2>AI Insights & Predictions</h2>
+            <div class="alert alert-warning">
+                🛑 Overeating Alert: You tend to exceed your calorie goal by 200 kcal daily. Try reducing portion sizes!
+            </div>
+            <div class="alert">
+                🥦 Smart Suggestions: For dinner, a 400 kcal meal is recommended. Try a grilled chicken salad!
+            </div>
+            <div class="alert">
+                📅 Weekly Pattern: You consume more sugar on weekends. Reduce by 20% for better health!
+            </div>
+        </section>
+
+        <!-- Chart -->
+        <section class="chart-container">
+            <canvas id="calorieChart"></canvas>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="#" style="color: white;">Home</a></p>
+                    <p><a href="#" style="color: white;">Blog</a></p>
+                    <p><a href="#" style="color: white;">Privacy</a></p>
+                    <p><a href="#" style="color: white;">Contact</a></p>
+                </div>
+                <div>
+                    <h3>Connect With Us</h3>
+                    <p>📱 Download Our App</p>
+                    <p>📧 support@calorietracker.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="calorie.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+:root {
+    --primary: #4CAF50;
+    --secondary: #2196F3;
+    --warning: #f44336;
+    --gray: #757575;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Food Input Section */
+.food-input {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.food-list {
+    margin: 1rem 0;
+}
+
+.food-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 2rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 26.25%;  /* (525/2000)*100 */
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #43A047;
+}
+
+/* Predictions Section */
+.predictions {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+.alert-warning {
+    background: #ffebee;
+    color: var(--warning);
+}
+
+/* Charts */
+.chart-container {
+    margin: 2rem 0;
+    height: 300px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.food-input-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+}
+
+.food-search {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+.food-list {
+    margin: 1rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.food-item {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+}
+
+.food-item:last-child {
+    border-bottom: none;
+}
+
+.food-header {
+    font-weight: 600;
+    background: #f5f5f5;
+}
+
+.quantity-input {
+    width: 80px;
+    padding: 0.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    color: #f44336;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+}
+
+.total-calories {
+    text-align: right;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top: 2px solid #e0e0e0;
+}
+
+.food-search {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+.food-list {
+    margin: 1rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+.food-item {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 1fr;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: center;
+}
+
+.food-header {
+    font-weight: 600;
+    background: #f5f5f5;
+}
+
+.quantity-input {
+    width: 80px;
+    padding: 0.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.delete-btn {
+    color: #f44336;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+}
+
+/* Progress Bar Animation */
+@keyframes progressAnimation {
+    0% { width: 0; }
+}
+
+.progress {
+    animation: progressAnimation 1s ease-out forwards;
+}

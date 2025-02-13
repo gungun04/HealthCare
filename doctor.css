@@ -1,0 +1,9 @@
+.hero-gradient {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+.appointment-card {
+    transition: transform 0.2s;
+}
+.appointment-card:hover {
+    transform: translateY(-2px);
+}
