@@ -82,7 +82,7 @@
   }
   
   /* Pulse animation for the active link */
-  .nav-link.active::after {
+  /* .nav-link.active::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -95,7 +95,7 @@
     opacity: 0.1;
     z-index: -1;
     animation: pulse 2s infinite;
-  }
+  } */
   
   @keyframes pulse {
     0% {
