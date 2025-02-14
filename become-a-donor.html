@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeLink - Become a Donor</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
     <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -83,18 +85,31 @@
 <body class="bg-gray-50 hero-pattern">
     <!-- Enhanced Header with Gradient -->
     <header class="bg-white shadow-lg">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center cursor-pointer">
-                    <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <span class="ml-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-pink-500">LifeLink</span>
-                </div>
-            </div>
-        </nav>
+        <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚕️</span>
+        <span>MedTech</span>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Solutions</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Research</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
     </header>
 
     <div id="become-donor" class="page">
@@ -217,17 +232,58 @@
     </div>
 
     <!-- Footer with gradient -->
-    <footer class="gradient-bg text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">About LifeLink</h3>
-                    <p class="text-white opacity-80">Connecting donors with recipients to save lives through safe and efficient donation matching.</p>
-                </div>
-                <!-- Other footer sections -->
-            </div>
+    <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <span class="footer-logo-icon">⚕️</span>
+          <span>MedTech</span>
         </div>
-    </footer>
+        <p class="footer-description">
+          Your go-to healthcare buddy with AI tools for wellness tracking, quick help, and personalized health tips!
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link">📱</a>
+          <a href="#" class="social-link">💻</a>
+          <a href="#" class="social-link">📧</a>
+          <a href="#" class="social-link">🔗</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-title">Solutions</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="donation-platform.html">🩸 Blood & Organ Donation</a></li>
+          <li class="footer-link"><a href="breathing-guide (6).html">🫁 Deep Breathing Guide</a></li>
+          <li class="footer-link"><a href="emergency-response-assistant.html">🚑 Emergency Assistant</a></li>
+          <li class="footer-link"><a href="doctor.html">📅 Doctor's Appointment</a></li>
+          <li class="footer-link"><a href="med.html">💊 Medicine Reminder</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-title">Resources</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#">📚 Documentation</a></li>
+          <li class="footer-link"><a href="#">🎓 Training</a></li>
+          <li class="footer-link"><a href="#">📰 Blog</a></li>
+          <li class="footer-link"><a href="#">❓ Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-title">Contact</h3>
+        <div class="contact-info">📍 AIIMS Hospital</div>
+        <div class="contact-info">📞 9543614191</div>
+        <div class="contact-info">📧 medTech@gmail.com</div>
+        <div class="contact-info">⏰ Mon-Fri: 7:00 AM - 11:00 PM</div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 MedTech. All rights reserved.</p>
+    </div>
+  </footer>
 
     <script>
         // Previous JavaScript remains the same
