@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Platform</title>
+    <link rel="stylesheet" href="nav.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
         .hero-section {
@@ -21,20 +22,31 @@
 <body class="font-sans">
     <!-- Header -->
     <header class="bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-xl font-bold text-blue-600">HealthCare</div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-                    <a href="#education" class="text-gray-700 hover:text-blue-600">Education</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Find a Doctor</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Emergency</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Blog</a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Login/Register</button>
-                </div>
+        <nav>
+            <div class="nav-container">
+              <a href="#" class="logo">
+                <span class="logo-icon">⚕️</span>
+                <span>MedTech</span>
+              </a>
+              <ul class="nav-links">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Solutions</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Contact</a>
+                </li>
+              </ul>
             </div>
-        </nav>
+          </nav>
     </header>
 
     <!-- Hero Section -->

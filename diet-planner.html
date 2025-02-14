@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>आहार योजना - Personalized Indian Diet Planner</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="nav.css">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #FFE5E5 0%, #E8F5E9 100%);
@@ -28,19 +29,35 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <nav class="bg-green-600 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">आहार योजना</h1>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-green-200">About</a>
-                <a href="#contact" class="hover:text-green-200">Contact</a>
-            </div>
+    <nav>
+        <div class="nav-container">
+          <a href="#" class="logo">
+            <span class="logo-icon">⚕️</span>
+            <span>MedTech</span>
+          </a>
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Research</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
     <header class="gradient-bg py-20">
         <div class="container mx-auto text-center px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 pt-24">
                 स्वस्थ भारत, स्वस्थ आहार
             </h1>
             <p class="text-xl text-gray-600 mb-8">

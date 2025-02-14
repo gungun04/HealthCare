@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator – Track Your Health Instantly</title>
+    <link rel="stylesheet" href="nav.css">
     <style>
         :root {
             --primary-color: #4A90E2;
@@ -33,12 +34,13 @@
             padding: 2rem;
         }
 
-        header {
+        section {
             text-align: center;
             padding: 3rem 1rem;
             background: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);
             color: white;
             margin-bottom: 2rem;
+            padding-top: 100px;
         }
 
         h1 {
@@ -230,10 +232,36 @@
     </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <div class="nav-container">
+          <a href="#" class="logo">
+            <span class="logo-icon">⚕️</span>
+            <span>MedTech</span>
+          </a>
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Research</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+    <section>
         <h1>Calculate Your BMI – Know Your Health Status!</h1>
         <p class="subheading">Your BMI helps you understand your body weight in relation to your height. Let's find yours!</p>
-    </header>
+    </section>
 
     <div class="container">
         <div class="calculator-card">

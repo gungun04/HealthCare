@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine Reminder</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <link rel="stylesheet" href="nav.css">
     <style>
         :root {
             --primary-color: #4A90E2;
@@ -61,6 +62,7 @@
             padding: 4rem 1rem;
             background: linear-gradient(135deg, #4A90E2 0%, #5CB85C 100%);
             color: white;
+            padding-top: 100px;
         }
 
         .hero h1 {
@@ -242,18 +244,31 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav>
         <div class="nav-container">
-            <div class="logo">MedReminder</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#">Features</a>
-                <a href="#">Find a Doctor</a>
-                <a href="#">Emergency Help</a>
-                <a href="#">Profile</a>
-            </div>
+          <a href="#" class="logo">
+            <span class="logo-icon">⚕️</span>
+            <span>MedTech</span>
+          </a>
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Solutions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Research</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
     <section class="hero">
         <h1>Never Miss a Dose Again! 💊⏰</h1>
