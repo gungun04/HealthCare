@@ -17,26 +17,6 @@ body {
     color: #333;
 }
 
-/* Navigation */
-nav {
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--gray);
-    font-weight: 500;
-}
 
 /* Hero Section */
 .hero {
@@ -44,6 +24,7 @@ nav {
     color: white;
     padding: 4rem 2rem;
     text-align: center;
+    padding-top: 100px;
 }
 
 .hero h1 {
